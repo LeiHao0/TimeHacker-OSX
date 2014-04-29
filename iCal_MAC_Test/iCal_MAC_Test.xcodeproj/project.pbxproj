@@ -18,6 +18,7 @@
 		6EB126C5190FEEA20019651B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB126A4190FEEA20019651B /* Cocoa.framework */; };
 		6EB126CD190FEEA20019651B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EB126CB190FEEA20019651B /* InfoPlist.strings */; };
 		6EB126CF190FEEA20019651B /* iCal_MAC_TestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB126CE190FEEA20019651B /* iCal_MAC_TestTests.m */; };
+		6EB126D9190FEF420019651B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB126D8190FEF420019651B /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		6EB126CA190FEEA20019651B /* iCal_MAC_TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCal_MAC_TestTests-Info.plist"; sourceTree = "<group>"; };
 		6EB126CC190FEEA20019651B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EB126CE190FEEA20019651B /* iCal_MAC_TestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCal_MAC_TestTests.m; sourceTree = "<group>"; };
+		6EB126D8190FEF420019651B /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB126D9190FEF420019651B /* EventKit.framework in Frameworks */,
 				6EB126A5190FEEA20019651B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		6EB126A3190FEEA20019651B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EB126D8190FEF420019651B /* EventKit.framework */,
 				6EB126A4190FEEA20019651B /* Cocoa.framework */,
 				6EB126C3190FEEA20019651B /* XCTest.framework */,
 				6EB126A6190FEEA20019651B /* Other Frameworks */,

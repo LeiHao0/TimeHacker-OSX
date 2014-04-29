@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iCalTestViewController : UIViewController
+@interface iCalTestViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    NSArray *myData;
+}
+
+@property (nonatomic,retain) NSArray *myData;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

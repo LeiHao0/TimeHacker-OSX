@@ -21,6 +21,7 @@
 		6E67D836190FA3E400B0217D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E67D818190FA3E400B0217D /* UIKit.framework */; };
 		6E67D83E190FA3E400B0217D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E67D83C190FA3E400B0217D /* InfoPlist.strings */; };
 		6E67D840190FA3E400B0217D /* iCalTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E67D83F190FA3E400B0217D /* iCalTestTests.m */; };
+		6E67D84A190FA70500B0217D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E67D849190FA70500B0217D /* EventKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,25 +35,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E67D811190FA3E400B0217D /* iCalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E67D811190FA3E400B0217D /* iCal_iOS_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCal_iOS_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E67D814190FA3E400B0217D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E67D816190FA3E400B0217D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6E67D818190FA3E400B0217D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6E67D81C190FA3E400B0217D /* iCalTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCalTest-Info.plist"; sourceTree = "<group>"; };
+		6E67D81C190FA3E400B0217D /* iCal_iOS_Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCal_iOS_Test-Info.plist"; sourceTree = "<group>"; };
 		6E67D81E190FA3E400B0217D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E67D820190FA3E400B0217D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E67D822190FA3E400B0217D /* iCalTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCalTest-Prefix.pch"; sourceTree = "<group>"; };
+		6E67D822190FA3E400B0217D /* iCal_iOS_Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCal_iOS_Test-Prefix.pch"; sourceTree = "<group>"; };
 		6E67D823190FA3E400B0217D /* iCalTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCalTestAppDelegate.h; sourceTree = "<group>"; };
 		6E67D824190FA3E400B0217D /* iCalTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCalTestAppDelegate.m; sourceTree = "<group>"; };
 		6E67D827190FA3E400B0217D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E67D829190FA3E400B0217D /* iCalTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCalTestViewController.h; sourceTree = "<group>"; };
 		6E67D82A190FA3E400B0217D /* iCalTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCalTestViewController.m; sourceTree = "<group>"; };
 		6E67D82C190FA3E400B0217D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E67D832190FA3E400B0217D /* iCalTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCalTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E67D832190FA3E400B0217D /* iCal_iOS_TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCal_iOS_TestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E67D833190FA3E400B0217D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6E67D83B190FA3E400B0217D /* iCalTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCalTestTests-Info.plist"; sourceTree = "<group>"; };
+		6E67D83B190FA3E400B0217D /* iCal_iOS_TestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iCal_iOS_TestTests-Info.plist"; sourceTree = "<group>"; };
 		6E67D83D190FA3E400B0217D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E67D83F190FA3E400B0217D /* iCalTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCalTestTests.m; sourceTree = "<group>"; };
+		6E67D849190FA70500B0217D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E67D84A190FA70500B0217D /* EventKit.framework in Frameworks */,
 				6E67D817190FA3E400B0217D /* CoreGraphics.framework in Frameworks */,
 				6E67D819190FA3E400B0217D /* UIKit.framework in Frameworks */,
 				6E67D815190FA3E400B0217D /* Foundation.framework in Frameworks */,
@@ -92,8 +95,8 @@
 		6E67D812190FA3E400B0217D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E67D811190FA3E400B0217D /* iCalTest.app */,
-				6E67D832190FA3E400B0217D /* iCalTestTests.xctest */,
+				6E67D811190FA3E400B0217D /* iCal_iOS_Test.app */,
+				6E67D832190FA3E400B0217D /* iCal_iOS_TestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +104,7 @@
 		6E67D813190FA3E400B0217D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E67D849190FA70500B0217D /* EventKit.framework */,
 				6E67D814190FA3E400B0217D /* Foundation.framework */,
 				6E67D816190FA3E400B0217D /* CoreGraphics.framework */,
 				6E67D818190FA3E400B0217D /* UIKit.framework */,
@@ -126,10 +130,10 @@
 		6E67D81B190FA3E400B0217D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E67D81C190FA3E400B0217D /* iCalTest-Info.plist */,
+				6E67D81C190FA3E400B0217D /* iCal_iOS_Test-Info.plist */,
 				6E67D81D190FA3E400B0217D /* InfoPlist.strings */,
 				6E67D820190FA3E400B0217D /* main.m */,
-				6E67D822190FA3E400B0217D /* iCalTest-Prefix.pch */,
+				6E67D822190FA3E400B0217D /* iCal_iOS_Test-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,7 +150,7 @@
 		6E67D83A190FA3E400B0217D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E67D83B190FA3E400B0217D /* iCalTestTests-Info.plist */,
+				6E67D83B190FA3E400B0217D /* iCal_iOS_TestTests-Info.plist */,
 				6E67D83C190FA3E400B0217D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -155,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E67D810190FA3E400B0217D /* iCalTest */ = {
+		6E67D810190FA3E400B0217D /* iCal_iOS_Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E67D843190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCalTest" */;
+			buildConfigurationList = 6E67D843190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCal_iOS_Test" */;
 			buildPhases = (
 				6E67D80D190FA3E400B0217D /* Sources */,
 				6E67D80E190FA3E400B0217D /* Frameworks */,
@@ -167,14 +171,14 @@
 			);
 			dependencies = (
 			);
-			name = iCalTest;
+			name = iCal_iOS_Test;
 			productName = iCalTest;
-			productReference = 6E67D811190FA3E400B0217D /* iCalTest.app */;
+			productReference = 6E67D811190FA3E400B0217D /* iCal_iOS_Test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E67D831190FA3E400B0217D /* iCalTestTests */ = {
+		6E67D831190FA3E400B0217D /* iCal_iOS_TestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E67D846190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCalTestTests" */;
+			buildConfigurationList = 6E67D846190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCal_iOS_TestTests" */;
 			buildPhases = (
 				6E67D82E190FA3E400B0217D /* Sources */,
 				6E67D82F190FA3E400B0217D /* Frameworks */,
@@ -185,9 +189,9 @@
 			dependencies = (
 				6E67D838190FA3E400B0217D /* PBXTargetDependency */,
 			);
-			name = iCalTestTests;
+			name = iCal_iOS_TestTests;
 			productName = iCalTestTests;
-			productReference = 6E67D832190FA3E400B0217D /* iCalTestTests.xctest */;
+			productReference = 6E67D832190FA3E400B0217D /* iCal_iOS_TestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -205,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E67D80C190FA3E400B0217D /* Build configuration list for PBXProject "iCalTest" */;
+			buildConfigurationList = 6E67D80C190FA3E400B0217D /* Build configuration list for PBXProject "iCal_iOS_Test" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,8 +222,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E67D810190FA3E400B0217D /* iCalTest */,
-				6E67D831190FA3E400B0217D /* iCalTestTests */,
+				6E67D810190FA3E400B0217D /* iCal_iOS_Test */,
+				6E67D831190FA3E400B0217D /* iCal_iOS_TestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +273,7 @@
 /* Begin PBXTargetDependency section */
 		6E67D838190FA3E400B0217D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E67D810190FA3E400B0217D /* iCalTest */;
+			target = 6E67D810190FA3E400B0217D /* iCal_iOS_Test */;
 			targetProxy = 6E67D837190FA3E400B0217D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -378,9 +382,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCalTest/iCalTest-Prefix.pch";
-				INFOPLIST_FILE = "iCalTest/iCalTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iCalTest/iCal_iOS_Test-Prefix.pch";
+				INFOPLIST_FILE = "iCalTest/iCal_iOS_Test-Info.plist";
+				PRODUCT_NAME = iCal_iOS_Test;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,9 +395,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iCalTest/iCalTest-Prefix.pch";
-				INFOPLIST_FILE = "iCalTest/iCalTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "iCalTest/iCal_iOS_Test-Prefix.pch";
+				INFOPLIST_FILE = "iCalTest/iCal_iOS_Test-Info.plist";
+				PRODUCT_NAME = iCal_iOS_Test;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -413,8 +417,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "iCalTestTests/iCalTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "iCalTestTests/iCal_iOS_TestTests-Info.plist";
+				PRODUCT_NAME = iCal_iOS_TestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -431,8 +435,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iCalTest/iCalTest-Prefix.pch";
-				INFOPLIST_FILE = "iCalTestTests/iCalTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "iCalTestTests/iCal_iOS_TestTests-Info.plist";
+				PRODUCT_NAME = iCal_iOS_TestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -441,7 +445,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E67D80C190FA3E400B0217D /* Build configuration list for PBXProject "iCalTest" */ = {
+		6E67D80C190FA3E400B0217D /* Build configuration list for PBXProject "iCal_iOS_Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E67D841190FA3E400B0217D /* Debug */,
@@ -450,21 +454,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E67D843190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCalTest" */ = {
+		6E67D843190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCal_iOS_Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E67D844190FA3E400B0217D /* Debug */,
 				6E67D845190FA3E400B0217D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		6E67D846190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCalTestTests" */ = {
+		6E67D846190FA3E400B0217D /* Build configuration list for PBXNativeTarget "iCal_iOS_TestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E67D847190FA3E400B0217D /* Debug */,
 				6E67D848190FA3E400B0217D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

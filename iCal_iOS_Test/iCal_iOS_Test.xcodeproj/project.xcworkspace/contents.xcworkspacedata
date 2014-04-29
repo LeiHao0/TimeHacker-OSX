@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iCalTest.xcodeproj">
+      location = "self:iCal_iOS_Test.xcodeproj">
    </FileRef>
 </Workspace>
