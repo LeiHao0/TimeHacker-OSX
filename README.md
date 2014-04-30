@@ -37,7 +37,10 @@
 就说柳比歇夫坚持56年的 "时间统计法"， 别说应用了，能存在那么长时间的公司都非常牛了    
 
 ##一万小时天才理论
-记录还一个好处，看上面的标题应该已经猜到了  
+这本书是我在 `2011-11-24 8:00 PM` 学校图书馆看到的，如果不是有日历，谁还知道是哪一天   
+
+另外记录还一个好处，看上面的标题应该已经猜到了 
+
 只要分类准确，把所有相同的一加，结果就出来了
 
 比如编程方面，我投入多少小时，只要运行下这个项目就出来了
@@ -75,16 +78,37 @@ Last year I have my rMBP, so Google Cal is not importent as before, especially a
 刚刚突然想到，也不知道离 1W 还有多少，
 虽然到了 1W 也不代表就是天才了，但是忍不住好奇心啊
 
-虽然 MAC 买半年了，但 iOS 开发基本没怎么看，边码边查，居然弄出来了，好开心 ^_^  
+虽然 MAC 买半年了，但 iOS 开发基本没怎么看，边码边查，居然弄出来了，好开心 ^_^    
 测试大概如图：
-![](http://cl.ly/image/1e1N1P0k1a1l/time-harker-1.png)
+![](http://cl.ly/image/2s2h1Q421z0y/time-harker-1.png)
 
-但是偶还木有开发者账号，模拟器上的好像只能同步一个月，肿么会酱紫 \*´∀\`)´∀\`)\*´∀\`)\*´∀\`)  
+`NSLog` 打出来是很快的，`[self.tableView reloadData];` 需要几秒钟，耐心等一小会儿就好~~
+
+但是有个问题哦，没法装到真机上！！！   
+偶之前没（￥）买开发者账号，模拟器上的 iCal 好像只能同步一个月，肿么会酱紫   
+｡･ﾟ･(\*ﾉД`\*)･ﾟ･｡
 
 然后记得看文档时，`EKEventStore` OS X 也可以用，试了下果然可以  
 图形界面先不搞了，在 xCode 里面 `NSLog` 看下结果
 
-等有空把之前的两年标注上颜色，看看结果是多少
+但是这里有个 BUG :  有啥 fix 方案吗？  
+
+ `yearsAgoComponents.year= -4;` 如果超过 -4， 统计就出现丢失数据的情况
+ 
+```Objective-C  
+    NSDateComponents *yearsAgoComponents = [[NSDateComponents alloc] init];
+    yearsAgoComponents.year= -4;
+    NSDate *yearsAgo = [calendar dateByAddingComponents:yearsAgoComponents
+                                                  toDate:[NSDate date]
+                                                 options:0];
+
+```  
+
+
+不过还好我也不到3年，先放着  
+一共记录了 9620 小时，我如果只专注于做一件事，是不是离天才只有一步之遥了 \*´∀\`)´∀\`)\*´∀\`)\*´∀\`)  
+
+不过之前两年是没有颜色分类的，最近又要找工作，等有时间整理下看看结果是多少
 
 ---
 

@@ -16,7 +16,7 @@
     // Insert code here to initialize your application
     
     EKEventStore *store = [[EKEventStore alloc]
-    initWithAccessToEntityTypes:EKEntityMaskEvent];
+                           initWithAccessToEntityTypes:EKEntityMaskEvent];
     [self printEvents:store];
     
 }
@@ -25,21 +25,21 @@
     // Get the appropriate calendar
     NSCalendar *calendar = [NSCalendar currentCalendar];
     // Create the start date components
-    NSDateComponents *oneDayAgoComponents = [[NSDateComponents alloc] init];
-    oneDayAgoComponents.year= -1;
-    NSDate *oneDayAgo = [calendar dateByAddingComponents:oneDayAgoComponents
+    NSDateComponents *yearsAgoComponents = [[NSDateComponents alloc] init];
+    yearsAgoComponents.year= -4;
+    NSDate *yearsAgo = [calendar dateByAddingComponents:yearsAgoComponents
                                                   toDate:[NSDate date]
                                                  options:0];
     
     // Create the end date components
-    NSDateComponents *oneYearFromNowComponents = [[NSDateComponents alloc] init];
-    oneYearFromNowComponents.year = 1;
-    NSDate *oneYearFromNow = [calendar dateByAddingComponents:oneYearFromNowComponents
+    NSDateComponents *onedayFromNowComponents = [[NSDateComponents alloc] init];
+    onedayFromNowComponents.day = 1;
+    NSDate *oneDayFromNow = [calendar dateByAddingComponents:onedayFromNowComponents
                                                        toDate:[NSDate date]
                                                       options:0];
     // Create the predicate from the event store's instance method
-    NSPredicate *predicate = [store predicateForEventsWithStartDate:oneDayAgo
-                                                            endDate:oneYearFromNow
+    NSPredicate *predicate = [store predicateForEventsWithStartDate:yearsAgo
+                                                            endDate:oneDayFromNow
                                                           calendars:nil];
     // Fetch all events that match the predicate
     NSArray *events = [store eventsMatchingPredicate:predicate];
@@ -68,11 +68,23 @@
     
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:5];
     
-    
+    __block long sum = 0;
     [calTimeDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         long l = [obj longValue]/60;
-        NSString *s = [NSString stringWithFormat:@"\n%@ : already %ld h,%ld h remained", key,l,10000-l];
-        NSLog(s);
+        sum += l;
+        NSString *s = [NSString stringWithFormat:@"%@ : already %ld h,%ld h remained", key,l,10000-l];
+        NSLog(@"%@", s);
+        [result addObject:s];
+    }];
+    
+    NSString *s = [NSString stringWithFormat:@"%ld h in Total", sum];
+    [result addObject:s];
+    NSLog(@"%@", s);
+    
+    [calTimeDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        double f  = [obj longValue]/60 *100.0 / sum;
+        NSString *s = [NSString stringWithFormat:@"%@ : %0.2f%%", key,f];
+        NSLog(@"%@", s);
         [result addObject:s];
     }];
     
