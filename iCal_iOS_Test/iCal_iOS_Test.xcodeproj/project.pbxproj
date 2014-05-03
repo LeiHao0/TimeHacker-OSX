@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E4710AB19124DED00442E89 /* iCalTestMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4710AA19124DED00442E89 /* iCalTestMainViewController.m */; };
 		6E67D815190FA3E400B0217D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E67D814190FA3E400B0217D /* Foundation.framework */; };
 		6E67D817190FA3E400B0217D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E67D816190FA3E400B0217D /* CoreGraphics.framework */; };
 		6E67D819190FA3E400B0217D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E67D818190FA3E400B0217D /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E4710A919124DED00442E89 /* iCalTestMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCalTestMainViewController.h; sourceTree = "<group>"; };
+		6E4710AA19124DED00442E89 /* iCalTestMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCalTestMainViewController.m; sourceTree = "<group>"; };
 		6E67D811190FA3E400B0217D /* iCal_iOS_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCal_iOS_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E67D814190FA3E400B0217D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E67D816190FA3E400B0217D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				6E67D823190FA3E400B0217D /* iCalTestAppDelegate.h */,
 				6E67D824190FA3E400B0217D /* iCalTestAppDelegate.m */,
 				6E67D826190FA3E400B0217D /* Main.storyboard */,
+				6E4710A919124DED00442E89 /* iCalTestMainViewController.h */,
+				6E4710AA19124DED00442E89 /* iCalTestMainViewController.m */,
 				6E67D829190FA3E400B0217D /* iCalTestViewController.h */,
 				6E67D82A190FA3E400B0217D /* iCalTestViewController.m */,
 				6E67D82C190FA3E400B0217D /* Images.xcassets */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E4710AB19124DED00442E89 /* iCalTestMainViewController.m in Sources */,
 				6E67D82B190FA3E400B0217D /* iCalTestViewController.m in Sources */,
 				6E67D821190FA3E400B0217D /* main.m in Sources */,
 				6E67D825190FA3E400B0217D /* iCalTestAppDelegate.m in Sources */,

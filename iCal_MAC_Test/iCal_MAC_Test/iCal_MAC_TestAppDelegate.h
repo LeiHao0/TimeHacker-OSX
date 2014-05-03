@@ -8,8 +8,23 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface iCal_MAC_TestAppDelegate : NSObject <NSApplicationDelegate>
+@interface iCal_MAC_TestAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSTableView *ibTableView;
+@property (weak) IBOutlet NSButton *ibButtonStartStop;
+@property (weak) IBOutlet NSTextField *ibTextFieldTaskToDo;
+@property (weak) IBOutlet NSTextField *ibTextFieldTime;
+@property (weak) IBOutlet NSTextField *ibTextFieldNotification;
+@property (weak) IBOutlet NSArrayController *ibArrayController;
+@property (weak) IBOutlet NSTextFieldCell *ibTextFieldCell;
+@property (weak) IBOutlet NSTableColumn *ibTableColumn;
+
+@property BOOL isStart;
+@property NSDate *mStartDate;
+@property NSDate *mEndDate;
+@property NSString *mTitle;
+//@property NSMutableDictionary *mMutableDictionary;
+@property NSTimer *mCountingTimer;
 
 @end

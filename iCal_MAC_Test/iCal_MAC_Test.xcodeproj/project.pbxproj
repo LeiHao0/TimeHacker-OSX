@@ -471,6 +471,7 @@
 				6EB126D4190FEEA20019651B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EB126D5190FEEA20019651B /* Build configuration list for PBXNativeTarget "iCal_MAC_TestTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +480,7 @@
 				6EB126D7190FEEA20019651B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
