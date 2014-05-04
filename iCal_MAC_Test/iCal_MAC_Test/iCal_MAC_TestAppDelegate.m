@@ -173,32 +173,38 @@ static NSString *keyiCal = @"iCal";
 }
 
 - (void) writeEvent2iCal {
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
     
-    EKEvent *event = [EKEvent eventWithEventStore:eventStore];
-    
-    event.title = mTitle;
-    event.endDate = mEndDate;
-    event.startDate = mStartDate;
-    
-    //    NSTimeInterval interval = (60 *60)* -3 ;
-    //    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];  //Create object of alarm
-    //    [event addAlarm:alarm]; //Add alarm to your event
-    
-    [event setCalendar:[eventStore defaultCalendarForNewEvents]];
-    NSError *err;
-    NSString *ical_event_id;
-    //save your event
-    if([eventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
-        ical_event_id = event.eventIdentifier;
-        NSLog(@"%@",ical_event_id);
-    }
+    EKEventStore *store = [[EKEventStore alloc]
+                           initWithAccessToEntityTypes:EKEntityMaskEvent];
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
+                                                                    NSError *error) {
+        
+        EKEvent *event = [EKEvent eventWithEventStore:store];
+        
+        event.title = mTitle;
+        event.endDate = mEndDate;
+        event.startDate = mStartDate;
+        
+        //    NSTimeInterval interval = (60 *60)* -3 ;
+        //    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];  //Create object of alarm
+        //    [event addAlarm:alarm]; //Add alarm to your event
+        
+        [event setCalendar:[store defaultCalendarForNewEvents]];
+        NSError *err;
+        NSString *ical_event_id;
+        //save your event
+        if([store saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
+            ical_event_id = event.eventIdentifier;
+            NSLog(@"%@",ical_event_id);
+        }
+    }];
+   
 }
 
 - (IBAction)iCalAnalytics:(id)sender {
     EKEventStore *store = [[EKEventStore alloc]
                            initWithAccessToEntityTypes:EKEntityMaskEvent];
-    [store requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted,
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
                                                                        NSError *error) {
         [self showiCal:[self printEvents:store]];
     }];
