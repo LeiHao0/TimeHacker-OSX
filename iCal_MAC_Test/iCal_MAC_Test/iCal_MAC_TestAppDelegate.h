@@ -19,6 +19,8 @@
 @property (weak) IBOutlet NSArrayController *ibArrayController;
 @property (weak) IBOutlet NSTextFieldCell *ibTextFieldCell;
 @property (weak) IBOutlet NSTableColumn *ibTableColumn;
+@property (weak) IBOutlet NSButton *ibiReminders;
+@property (weak) IBOutlet NSButton *ibiCalAnalytics;
 
 @property BOOL isStart;
 @property NSDate *mStartDate;

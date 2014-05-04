@@ -13,20 +13,29 @@
 
 @synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldNotification,ibTextFieldTaskToDo,ibTextFieldTime;
 
-@synthesize ibTableColumn,ibTextFieldCell;
+@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders;
 
 @synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle;
+
+@synthesize window;
 
 static NSString *keyReminders = @"Reminders";
 static NSString *keyiCal = @"iCal";
 
--(void)awakeFromNib{
+- (void)awakeFromNib {
     [super awakeFromNib];
-    
-    [ibTableView setTarget:self];
+
     [ibTableView setDoubleAction:NSSelectorFromString(@"doubleClick:")];
-//    [ibTableView setAction:NSSelectorFromString(@"click:")];
-    
+}
+
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag {
+	if (flag) {
+		return NO;
+	}
+    else	{
+        [window makeKeyAndOrderFront:self];
+        return YES;
+	}
 }
 
 - (void) doubleClick: (id)sender
@@ -46,7 +55,7 @@ static NSString *keyiCal = @"iCal";
     [ibTableColumn setEditable:NO];
     [ibTextFieldCell setSelectable:YES];
     mTitle = @"";
-    ibTextFieldNotification.stringValue = @"Click iReminders";
+    ibTextFieldNotification.stringValue = @"Click 'iReminders' or Type in 'TaskToDo' bar";
 }
 
 
@@ -75,16 +84,26 @@ static NSString *keyiCal = @"iCal";
 - (IBAction)startStop:(id)sender {
     if (!isStart) {
         if ([self startTask]) {
+            ibTextFieldNotification.stringValue =  [NSString stringWithFormat:@"Starting: %@ task", ibTextFieldTaskToDo.stringValue];
             ibButtonStartStop.title = @"Stop";
             isStart = !isStart;
+            [self setButton:NO];
         }
         
     } else {
         ibButtonStartStop.title = @"Start";
         [self stopTask];
+        [self setButton:YES];
         isStart = !isStart;
     }
     
+}
+
+- (void) setButton:(BOOL) onOff{
+    [ibiReminders setEnabled:onOff];
+    [ibiCalAnalytics setEnabled:onOff];
+    [ibTextFieldTaskToDo setEnabled:onOff];
+    [ibTableView setEnabled:onOff];
 }
 
 - (void) paint:(NSTimer *)paramTimer{
@@ -105,7 +124,7 @@ static NSString *keyiCal = @"iCal";
 - (void) startCounting{
     
     self.mCountingTimer = [NSTimer
-                           scheduledTimerWithTimeInterval:10
+                           scheduledTimerWithTimeInterval:1
                            target:self selector:@selector(paint:) userInfo:nil repeats:YES];
 }
 
@@ -119,7 +138,7 @@ static NSString *keyiCal = @"iCal";
 
 - (BOOL) startTask {
     if ([ibTextFieldTaskToDo.stringValue isEqualToString:@""]) {
-        ibTextFieldNotification.stringValue = [NSString stringWithFormat:@"Task is empty! doubleClick one reminder"];
+        ibTextFieldNotification.stringValue = [NSString stringWithFormat:@"Task is empty! DoubleClick a reminder"];
         return  NO;
     } else {
         mStartDate = [NSDate date];
@@ -195,6 +214,8 @@ static NSString *keyiCal = @"iCal";
                                                                        NSError *error) {
         [self showReminders:[self printIncompleteReminders:store]];
     }];
+    
+    ibTextFieldNotification.stringValue = @"DoubleClick a reminder";
 }
 
 - (NSArray *)printIncompleteReminders : (EKEventStore *) store {
