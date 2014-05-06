@@ -7,7 +7,7 @@
 //
 
 #import "iCal_MAC_TestAppDelegate.h"
-#import <EventKit/EventKit.h>
+
 
 @implementation iCal_MAC_TestAppDelegate
 
@@ -15,7 +15,7 @@
 
 @synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders;
 
-@synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle;
+@synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle, mEventStore, mReminderStore;
 
 @synthesize window;
 
@@ -24,7 +24,7 @@ static NSString *keyiCal = @"iCal";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    
     [ibTableView setDoubleAction:NSSelectorFromString(@"doubleClick:")];
 }
 
@@ -51,6 +51,8 @@ static NSString *keyiCal = @"iCal";
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+    
+    [self getAuthority];
     isStart = NO;
     [ibTableColumn setEditable:NO];
     [ibTextFieldCell setSelectable:YES];
@@ -58,6 +60,24 @@ static NSString *keyiCal = @"iCal";
     ibTextFieldNotification.stringValue = @"Click 'iReminders' or Type in 'TaskToDo' bar";
 }
 
+- (void)getAuthority {
+    EKEventStore *store = [[EKEventStore alloc]
+                           initWithAccessToEntityTypes:EKEntityMaskReminder];
+    
+    [store requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted,
+                                                                       NSError *error) {
+        mEventStore = store;
+    }];
+    
+    
+    store = [[EKEventStore alloc]
+             initWithAccessToEntityTypes:EKEntityMaskEvent];
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
+                                                                    NSError *error) {
+        mReminderStore =  store;
+    }];
+    
+}
 
 - (void) showReminders : (NSArray *) data {
     [self updateTableView:keyReminders withData:data];
@@ -71,7 +91,7 @@ static NSString *keyiCal = @"iCal";
     [self clearTableView];
     
     for (NSString *str in data) {
-//        [mMutableDictionary setObject:str forKey:key];
+        //        [mMutableDictionary setObject:str forKey:key];
         [ibArrayController addObjects:[NSArray arrayWithObject:[NSDictionary dictionaryWithObjectsAndKeys:str, key, nil]]];
     }
 }
@@ -102,7 +122,7 @@ static NSString *keyiCal = @"iCal";
 - (void) setButton:(BOOL) onOff{
     [ibiReminders setEnabled:onOff];
     [ibiCalAnalytics setEnabled:onOff];
-    [ibTextFieldTaskToDo setEnabled:onOff];
+    //    [ibTextFieldTaskToDo setEnabled:onOff];
     [ibTableView setEnabled:onOff];
 }
 
@@ -111,12 +131,12 @@ static NSString *keyiCal = @"iCal";
     
     int secondsInterval = [now timeIntervalSinceDate:mStartDate];
     
-    int iSeconds = secondsInterval  % 60;
+    //    int iSeconds = secondsInterval  % 60;
     int iMinutes = secondsInterval / 60 %60;
     int iHours = secondsInterval / 3600;
-    NSString *textFieldTime = [NSString stringWithFormat:@"%02d:%02d:%02d", iHours, iMinutes, iSeconds];
+    NSString *textFieldTime = [NSString stringWithFormat:@"%02d:%02d", iHours, iMinutes];
     
-//    NSLog(@"%@", textFieldTime);
+    //    NSLog(@"%@", textFieldTime);
     
     ibTextFieldTime.stringValue = textFieldTime;
 }
@@ -124,7 +144,7 @@ static NSString *keyiCal = @"iCal";
 - (void) startCounting{
     
     self.mCountingTimer = [NSTimer
-                           scheduledTimerWithTimeInterval:1
+                           scheduledTimerWithTimeInterval:60
                            target:self selector:@selector(paint:) userInfo:nil repeats:YES];
 }
 
@@ -133,7 +153,7 @@ static NSString *keyiCal = @"iCal";
         [self.mCountingTimer invalidate];
     }
     
-    ibTextFieldTime.stringValue = @"00:00:00";
+    ibTextFieldTime.stringValue = @"00:00";
 }
 
 - (BOOL) startTask {
@@ -162,7 +182,7 @@ static NSString *keyiCal = @"iCal";
     NSTimeInterval secondsInterval = [mEndDate timeIntervalSinceDate:mStartDate];
     
     if (secondsInterval > 10*60) {
-        notification = [NSString stringWithFormat:@"TrueMan! '%@' insert to iCal...", mTitle];
+        notification = [NSString stringWithFormat:@"TrueMan! %dm, '%@' insert to iCal...", (int)secondsInterval/60, mTitle ];
         [self writeEvent2iCal];
     } else {
         notification = [NSString stringWithFormat:@"Oh, Man, only %.0fs...",  secondsInterval];
@@ -174,52 +194,35 @@ static NSString *keyiCal = @"iCal";
 
 - (void) writeEvent2iCal {
     
-    EKEventStore *store = [[EKEventStore alloc]
-                           initWithAccessToEntityTypes:EKEntityMaskEvent];
-    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
-                                                                    NSError *error) {
-        
-        EKEvent *event = [EKEvent eventWithEventStore:store];
-        
-        event.title = mTitle;
-        event.endDate = mEndDate;
-        event.startDate = mStartDate;
-        
-        //    NSTimeInterval interval = (60 *60)* -3 ;
-        //    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];  //Create object of alarm
-        //    [event addAlarm:alarm]; //Add alarm to your event
-        
-        [event setCalendar:[store defaultCalendarForNewEvents]];
-        NSError *err;
-        NSString *ical_event_id;
-        //save your event
-        if([store saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
-            ical_event_id = event.eventIdentifier;
-            NSLog(@"%@",ical_event_id);
-        }
-    }];
-   
+    EKEvent *event = [EKEvent eventWithEventStore:mEventStore];
+    
+    event.title = mTitle;
+    event.endDate = mEndDate;
+    event.startDate = mStartDate;
+    
+    //    NSTimeInterval interval = (60 *60)* -3 ;
+    //    EKAlarm *alarm = [EKAlarm alarmWithRelativeOffset:interval];  //Create object of alarm
+    //    [event addAlarm:alarm]; //Add alarm to your event
+    
+    [event setCalendar:[mEventStore defaultCalendarForNewEvents]];
+    NSError *err;
+    NSString *ical_event_id;
+    //save your event
+    if([mEventStore saveEvent:event span:EKSpanThisEvent commit:YES error:&err]){
+        ical_event_id = event.eventIdentifier;
+        NSLog(@"%@",ical_event_id);
+    }
+    
+    
 }
 
 - (IBAction)iCalAnalytics:(id)sender {
-    EKEventStore *store = [[EKEventStore alloc]
-                           initWithAccessToEntityTypes:EKEntityMaskEvent];
-    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted,
-                                                                       NSError *error) {
-        [self showiCal:[self printEvents:store]];
-    }];
+    [self showiCal:[self printEvents:mEventStore]];
 }
 
 - (IBAction)iReminders:(id)sender {
     
-    
-    EKEventStore *store = [[EKEventStore alloc]
-                           initWithAccessToEntityTypes:EKEntityMaskReminder];
-
-    [store requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted,
-                                                                       NSError *error) {
-        [self showReminders:[self printIncompleteReminders:store]];
-    }];
+    [self showReminders:[self printIncompleteReminders:mReminderStore]];
     
     ibTextFieldNotification.stringValue = @"DoubleClick a reminder";
 }

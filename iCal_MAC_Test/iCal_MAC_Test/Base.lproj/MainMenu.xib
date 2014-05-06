@@ -679,14 +679,14 @@
         <window title="iCaleminder" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="387" height="301"/>
+            <rect key="contentRect" x="335" y="390" width="356" height="299"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="387" height="301"/>
+                <rect key="frame" x="0.0" y="0.0" width="356" height="299"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-2y-Um0">
-                        <rect key="frame" x="260" y="224" width="113" height="32"/>
+                        <rect key="frame" x="229" y="226" width="113" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="iCal Analytics" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Submarine" inset="2" id="Yqf-QR-8qQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -697,7 +697,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-Bp-w3J">
-                        <rect key="frame" x="260" y="253" width="113" height="32"/>
+                        <rect key="frame" x="229" y="259" width="113" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="iReminders" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Ping" inset="2" id="2Aq-Qr-arD">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -708,20 +708,20 @@
                         </connections>
                     </button>
                     <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2c-N2-5Jv">
-                        <rect key="frame" x="22" y="36" width="345" height="189"/>
+                        <rect key="frame" x="22" y="36" width="314" height="159"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" id="4Mf-vC-bLu">
-                            <rect key="frame" x="1" y="17" width="343" height="171"/>
+                            <rect key="frame" x="1" y="17" width="312" height="141"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="sSy-sB-Kjt" id="r9o-wA-zDe">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="171"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="312" height="141"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="283.50390625" minWidth="40" maxWidth="1000" id="5dp-DZ-cnx">
+                                        <tableColumn width="239.51171875" minWidth="40" maxWidth="1000" id="5dp-DZ-cnx">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Reminders">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -737,7 +737,7 @@
                                                 <binding destination="OCo-kD-n0H" name="value" keyPath="arrangedObjects.Reminders" id="KLJ-3c-bBI"/>
                                             </connections>
                                         </tableColumn>
-                                        <tableColumn width="53.65234375" minWidth="10" maxWidth="3.4028234663852886e+38" id="BhH-js-bhv">
+                                        <tableColumn width="66.65234375" minWidth="10" maxWidth="3.4028234663852886e+38" id="BhH-js-bhv">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="iCal">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -771,12 +771,12 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <tableHeaderView key="headerView" id="sSy-sB-Kjt">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="17"/>
+                            <rect key="frame" x="0.0" y="0.0" width="312" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztn-9i-DmP">
-                        <rect key="frame" x="20" y="259" width="215" height="22"/>
+                        <rect key="frame" x="20" y="203" width="316" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="TaskToDo -> Start" drawsBackground="YES" id="flT-vp-oiO">
                             <font key="font" metaFont="system"/>
@@ -785,38 +785,29 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-hJ-7rZ">
-                        <rect key="frame" x="171" y="224" width="70" height="32"/>
+                        <rect key="frame" x="143" y="251" width="70" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="dZ9-iN-b2b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="system" size="15"/>
                         </buttonCell>
                         <connections>
                             <action selector="startStop:" target="Voe-Tx-rLC" id="99d-ID-gfH"/>
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCR-jV-We5">
-                        <rect key="frame" x="94" y="233" width="77" height="17"/>
+                        <rect key="frame" x="18" y="234" width="107" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="00:00:00" id="mwu-gP-CXe">
-                            <font key="font" metaFont="system"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="00:00" id="mwu-gP-CXe">
+                            <font key="font" metaFont="system" size="21"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JM7-wF-pCP">
-                        <rect key="frame" x="20" y="11" width="349" height="17"/>
+                        <rect key="frame" x="20" y="11" width="318" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" placeholderString="Notification" id="hPx-LQ-Y1q">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-Jy-UW7">
-                        <rect key="frame" x="22" y="233" width="68" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Marathon:" id="xYY-KX-a7R">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

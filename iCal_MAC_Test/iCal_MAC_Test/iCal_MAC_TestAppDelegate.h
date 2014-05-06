@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import <EventKit/EventKit.h>
+
 @interface iCal_MAC_TestAppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
@@ -22,6 +24,9 @@
 @property (weak) IBOutlet NSButton *ibiReminders;
 @property (weak) IBOutlet NSButton *ibiCalAnalytics;
 
+
+@property EKEventStore* mEventStore;
+@property EKEventStore* mReminderStore;
 @property BOOL isStart;
 @property NSDate *mStartDate;
 @property NSDate *mEndDate;
