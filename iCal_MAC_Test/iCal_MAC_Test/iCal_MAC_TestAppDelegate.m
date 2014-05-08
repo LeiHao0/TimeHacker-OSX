@@ -220,31 +220,18 @@ static NSString *keyiCal = @"iCal";
     [self setButton:NO];
     [ibCircularProgressIndicator startAnimation:nil];
     
-    static dispatch_once_t once;
-    static dispatch_queue_t queue;
+    dispatch_queue_t analyticsQ = dispatch_queue_create("analytics", NULL);
     
-    //create download queue
-    dispatch_once(&once, ^{
-        queue =dispatch_queue_create("com.xxx.download.background", DISPATCH_QUEUE_CONCURRENT);
-    });
-    
-    //__block type
-    __block NSArray *array;
-    dispatch_async(queue, ^{
-        // long time task
-        array = [self printEvents:mEventStore];
-    });
-    
-    dispatch_barrier_async(queue, ^{
+    dispatch_async(analyticsQ, ^{
+        
+        NSArray *array = [self printEvents:mEventStore];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Update UI");
             [self showiCal: array];
             [self setButton:YES];
             [ibCircularProgressIndicator stopAnimation:nil];
         });
     });
-    
 }
 
 - (IBAction)iReminders:(id)sender {

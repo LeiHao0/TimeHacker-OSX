@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EB126A0190FEEA20019651B"
-               BuildableName = "iCal_MAC_Test.app"
+               BuildableName = "iCaleminder_OSX.app"
                BlueprintName = "iCaleminder_OSX"
                ReferencedContainer = "container:iCaleminder_OSX.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6EB126C1190FEEA20019651B"
-               BuildableName = "iCal_MAC_TestTests.xctest"
+               BuildableName = "iCaleminder_OSXTests.xctest"
                BlueprintName = "iCaleminder_OSXTests"
                ReferencedContainer = "container:iCaleminder_OSX.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EB126A0190FEEA20019651B"
-            BuildableName = "iCal_MAC_Test.app"
+            BuildableName = "iCaleminder_OSX.app"
             BlueprintName = "iCaleminder_OSX"
             ReferencedContainer = "container:iCaleminder_OSX.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EB126A0190FEEA20019651B"
-            BuildableName = "iCal_MAC_Test.app"
+            BuildableName = "iCaleminder_OSX.app"
             BlueprintName = "iCaleminder_OSX"
             ReferencedContainer = "container:iCaleminder_OSX.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6EB126A0190FEEA20019651B"
-            BuildableName = "iCal_MAC_Test.app"
+            BuildableName = "iCaleminder_OSX.app"
             BlueprintName = "iCaleminder_OSX"
             ReferencedContainer = "container:iCaleminder_OSX.xcodeproj">
          </BuildableReference>
