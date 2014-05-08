@@ -23,6 +23,7 @@
 @property (weak) IBOutlet NSTableColumn *ibTableColumn;
 @property (weak) IBOutlet NSButton *ibiReminders;
 @property (weak) IBOutlet NSButton *ibiCalAnalytics;
+@property (weak) IBOutlet NSProgressIndicator *ibCircularProgressIndicator;
 
 
 @property EKEventStore* mEventStore;

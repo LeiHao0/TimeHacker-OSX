@@ -15,6 +15,7 @@
             <connections>
                 <outlet property="ibArrayController" destination="OCo-kD-n0H" id="O1t-nL-vT2"/>
                 <outlet property="ibButtonStartStop" destination="sCL-hJ-7rZ" id="zTI-tO-KAK"/>
+                <outlet property="ibCircularProgressIndicator" destination="8Ds-ut-JEa" id="mnM-54-RyU"/>
                 <outlet property="ibTableColumn" destination="5dp-DZ-cnx" id="MDw-uM-5kE"/>
                 <outlet property="ibTableView" destination="r9o-wA-zDe" id="kXv-hc-Jb6"/>
                 <outlet property="ibTextFieldCell" destination="1Qu-UW-1bN" id="Brd-Yu-cFP"/>
@@ -680,7 +681,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="356" height="299"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="356" height="299"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -785,7 +786,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-hJ-7rZ">
-                        <rect key="frame" x="143" y="251" width="70" height="32"/>
+                        <rect key="frame" x="143" y="245" width="70" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="dZ9-iN-b2b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -799,7 +800,7 @@
                         <rect key="frame" x="18" y="234" width="107" height="46"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="00:00" id="mwu-gP-CXe">
-                            <font key="font" metaFont="system" size="21"/>
+                            <font key="font" metaFont="system" size="29"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -813,6 +814,10 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-ut-JEa">
+                        <rect key="frame" x="211" y="235" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </progressIndicator>
                 </subviews>
             </view>
         </window>

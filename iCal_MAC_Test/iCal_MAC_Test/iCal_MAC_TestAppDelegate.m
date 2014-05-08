@@ -13,7 +13,7 @@
 
 @synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldNotification,ibTextFieldTaskToDo,ibTextFieldTime;
 
-@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders;
+@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator;
 
 @synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle, mEventStore, mReminderStore;
 
@@ -217,7 +217,34 @@ static NSString *keyiCal = @"iCal";
 }
 
 - (IBAction)iCalAnalytics:(id)sender {
-    [self showiCal:[self printEvents:mEventStore]];
+    [self setButton:NO];
+    [ibCircularProgressIndicator startAnimation:nil];
+    
+    static dispatch_once_t once;
+    static dispatch_queue_t queue;
+    
+    //create download queue
+    dispatch_once(&once, ^{
+        queue =dispatch_queue_create("com.xxx.download.background", DISPATCH_QUEUE_CONCURRENT);
+    });
+    
+    //__block type
+    __block NSArray *array;
+    dispatch_async(queue, ^{
+        // long time task
+        array = [self printEvents:mEventStore];
+    });
+    
+    dispatch_barrier_async(queue, ^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Update UI");
+            [self showiCal: array];
+            [self setButton:YES];
+            [ibCircularProgressIndicator stopAnimation:nil];
+        });
+    });
+    
 }
 
 - (IBAction)iReminders:(id)sender {
