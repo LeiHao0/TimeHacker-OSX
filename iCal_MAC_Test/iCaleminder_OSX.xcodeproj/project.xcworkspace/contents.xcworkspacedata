@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:iCal_MAC_Test.xcodeproj">
+      location = "self:iCaleminder_OSX.xcodeproj">
    </FileRef>
 </Workspace>
