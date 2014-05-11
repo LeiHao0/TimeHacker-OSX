@@ -13,14 +13,35 @@
 
 @synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldNotification,ibTextFieldTaskToDo,ibTextFieldTime;
 
-@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator;
+@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator, ibSegmentedControl, ibStepper;
 
-@synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle, mEventStore, mReminderStore;
+@synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle, mEventStore, mReminderStore, mPromoToDoInterval;
 
 @synthesize window;
 
 static NSString *keyReminders = @"Reminders";
 static NSString *keyiCal = @"iCal";
+
+
+- (void) setNotification {
+    
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Time up!";
+    notification.informativeText = [NSString stringWithFormat:@"have a break!"];
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+}
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification {
+    // force display
+    return YES;
+}
+
+- (NSInteger) getModel {
+    return ibSegmentedControl.selectedSegment;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -48,16 +69,25 @@ static NSString *keyiCal = @"iCal";
     }
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
-    
+- (void) initialization {
     [self getAuthority];
     isStart = NO;
     [ibTableColumn setEditable:NO];
     [ibTextFieldCell setSelectable:YES];
     mTitle = @"";
     ibTextFieldNotification.stringValue = @"Click 'iReminders' or Type in 'TaskToDo' bar";
+    [self setDefaultPromoToDo];
+    [ibButtonStartStop setKeyEquivalent:@"\r"];
+    
+    [ibTextFieldNotification setHidden:YES];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    // Insert code here to initialize your application
+    [self initialization];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 - (void)getAuthority {
@@ -102,21 +132,27 @@ static NSString *keyiCal = @"iCal";
 }
 
 - (IBAction)startStop:(id)sender {
+    [self setNotification];
+    
     if (!isStart) {
         if ([self startTask]) {
             ibTextFieldNotification.stringValue =  [NSString stringWithFormat:@"Starting: %@ task", ibTextFieldTaskToDo.stringValue];
-            ibButtonStartStop.title = @"Stop";
+            ibButtonStartStop.title = @"◼︎";
             isStart = !isStart;
             [self setButton:NO];
         }
         
     } else {
-        ibButtonStartStop.title = @"Start";
+        ibButtonStartStop.title = @"▶︎";
         [self stopTask];
         [self setButton:YES];
         isStart = !isStart;
     }
     
+}
+- (IBAction)stepperValueChanged:(id)sender {
+
+    NSLog(@"%d",ibStepper.intValue);
 }
 
 - (void) setButton:(BOOL) onOff{
@@ -124,36 +160,82 @@ static NSString *keyiCal = @"iCal";
     [ibiCalAnalytics setEnabled:onOff];
     //    [ibTextFieldTaskToDo setEnabled:onOff];
     [ibTableView setEnabled:onOff];
+    [ibSegmentedControl setEnabled:onOff];
+    [ibStepper setEnabled:onOff];
+    if (onOff) {
+        [ibTextFieldTime setTextColor:[NSColor blackColor]];
+        [ibTextFieldNotification setTextColor:[NSColor blackColor]];
+    } else {
+        [ibTextFieldTime setTextColor:[NSColor grayColor]];
+        [ibTextFieldNotification setTextColor:[NSColor grayColor]];
+    }
 }
 
 - (void) paint:(NSTimer *)paramTimer{
-    NSDate *now = [NSDate date];
     
-    int secondsInterval = [now timeIntervalSinceDate:mStartDate];
+    NSString *textFieldTime = @"";
+    NSDate *now  = [NSDate date];
+    int iSeconds, iMinutes, iHours, secondsInterval;
     
-    //    int iSeconds = secondsInterval  % 60;
-    int iMinutes = secondsInterval / 60 %60;
-    int iHours = secondsInterval / 3600;
-    NSString *textFieldTime = [NSString stringWithFormat:@"%02d:%02d", iHours, iMinutes];
+    
+    switch ([self getModel]) {
+        case 0:
+             secondsInterval = --mPromoToDoInterval;
+             iSeconds = secondsInterval  % 60;
+             iMinutes = secondsInterval /60;
+            
+             textFieldTime = [NSString stringWithFormat:@"%02d:%02d", iMinutes, iSeconds];
+            break;
+        case 1:
+            
+            now = [NSDate date];
+            
+             secondsInterval = [now timeIntervalSinceDate:mStartDate];
+            
+             iSeconds = secondsInterval  % 60;
+             iMinutes = secondsInterval / 60 %60;
+             iHours = secondsInterval / 3600;
+            textFieldTime = [NSString stringWithFormat:@"%02d:%02d:%02d", iHours, iMinutes, iSeconds];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
     
     //    NSLog(@"%@", textFieldTime);
     
     ibTextFieldTime.stringValue = textFieldTime;
 }
 
+
 - (void) startCounting{
     
     self.mCountingTimer = [NSTimer
-                           scheduledTimerWithTimeInterval:60
+                           scheduledTimerWithTimeInterval:1
                            target:self selector:@selector(paint:) userInfo:nil repeats:YES];
+    
+    mPromoToDoInterval = [[ibTextFieldTime.stringValue substringToIndex:2] intValue]*60;
 }
 
 - (void) stopCounting{
     if (self.mCountingTimer != nil){
         [self.mCountingTimer invalidate];
     }
+    NSString *string;
+    switch ([self getModel]) {
+        case 0:
+            string = @"25:00";
+            break;
+        case 1:
+            string = @"00:00:00";
+            break;
+        default:
+            break;
+    }
     
-    ibTextFieldTime.stringValue = @"00:00";
+    ibTextFieldTime.stringValue = string;
 }
 
 - (BOOL) startTask {
@@ -258,6 +340,33 @@ static NSString *keyiCal = @"iCal";
     
     return result;
 }
+- (IBAction)segmentAction:(NSSegmentedControl *)segment {
+    NSInteger Index = segment.selectedSegment;
+    NSLog(@"Index %ld", (long)Index);
+    
+    switch (Index) {
+        case 0:  // promoToDoModel
+            [self setDefaultPromoToDo];
+            break;
+        case 1:  // marathonModel
+            [self setDefaultMarathon];
+            break;
+        default:
+            
+            break;
+    }
+}
+
+- (void) setDefaultMarathon {
+    ibTextFieldTime.stringValue = @"00:00:00";
+    [ibStepper setHidden:YES];
+}
+
+- (void) setDefaultPromoToDo {
+    ibTextFieldTime.stringValue = @"25:00";
+    [ibStepper setHidden:NO];
+}
+
 
 - (NSArray *)printEvents : (EKEventStore *) store {
     // Get the appropriate calendar

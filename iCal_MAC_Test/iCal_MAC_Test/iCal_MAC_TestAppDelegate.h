@@ -24,7 +24,8 @@
 @property (weak) IBOutlet NSButton *ibiReminders;
 @property (weak) IBOutlet NSButton *ibiCalAnalytics;
 @property (weak) IBOutlet NSProgressIndicator *ibCircularProgressIndicator;
-
+@property (weak) IBOutlet NSSegmentedControl *ibSegmentedControl;
+@property (weak) IBOutlet NSStepper *ibStepper;
 
 @property EKEventStore* mEventStore;
 @property EKEventStore* mReminderStore;
@@ -34,5 +35,7 @@
 @property NSString *mTitle;
 //@property NSMutableDictionary *mMutableDictionary;
 @property NSTimer *mCountingTimer;
+
+@property int mPromoToDoInterval;
 
 @end
