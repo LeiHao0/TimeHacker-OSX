@@ -17,7 +17,6 @@
 @property (weak) IBOutlet NSButton *ibButtonStartStop;
 @property (weak) IBOutlet NSTextField *ibTextFieldTaskToDo;
 @property (weak) IBOutlet NSTextField *ibTextFieldTime;
-@property (weak) IBOutlet NSTextField *ibTextFieldNotification;
 @property (weak) IBOutlet NSArrayController *ibArrayController;
 @property (weak) IBOutlet NSTextFieldCell *ibTextFieldCell;
 @property (weak) IBOutlet NSTableColumn *ibTableColumn;

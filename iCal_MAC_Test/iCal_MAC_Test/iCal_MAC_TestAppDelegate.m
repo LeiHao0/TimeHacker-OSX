@@ -11,7 +11,7 @@
 
 @implementation iCal_MAC_TestAppDelegate
 
-@synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldNotification,ibTextFieldTaskToDo,ibTextFieldTime;
+@synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldTaskToDo,ibTextFieldTime;
 
 @synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator, ibSegmentedControl, ibStepper;
 
@@ -64,7 +64,6 @@ static NSString *keyiCal = @"iCal";
     if ([ibTableView selectedRow] >= 0) {
         NSString *s = [ibTextFieldCell stringValue];
         ibTextFieldTaskToDo.stringValue = s;
-        ibTextFieldNotification.stringValue = @"Click Start";
         NSLog(@"cell value:%@", s);
     }
 }
@@ -75,11 +74,8 @@ static NSString *keyiCal = @"iCal";
     [ibTableColumn setEditable:NO];
     [ibTextFieldCell setSelectable:YES];
     mTitle = @"";
-    ibTextFieldNotification.stringValue = @"Click 'iReminders' or Type in 'TaskToDo' bar";
     [self setDefaultPromoToDo];
     [ibButtonStartStop setKeyEquivalent:@"\r"];
-    
-    [ibTextFieldNotification setHidden:YES];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -132,11 +128,9 @@ static NSString *keyiCal = @"iCal";
 }
 
 - (IBAction)startStop:(id)sender {
-    [self setNotification];
     
     if (!isStart) {
         if ([self startTask]) {
-            ibTextFieldNotification.stringValue =  [NSString stringWithFormat:@"Starting: %@ task", ibTextFieldTaskToDo.stringValue];
             ibButtonStartStop.title = @"◼︎";
             isStart = !isStart;
             [self setButton:NO];
@@ -150,9 +144,10 @@ static NSString *keyiCal = @"iCal";
     }
     
 }
-- (IBAction)stepperValueChanged:(id)sender {
-
-    NSLog(@"%d",ibStepper.intValue);
+- (IBAction)stepperValueChanged:(NSStepper *)sender {
+    
+    NSLog(@"%d", sender.intValue);
+    ibTextFieldTime.stringValue = [NSString stringWithFormat:  @"%d:00", sender.intValue];
 }
 
 - (void) setButton:(BOOL) onOff{
@@ -164,10 +159,8 @@ static NSString *keyiCal = @"iCal";
     [ibStepper setEnabled:onOff];
     if (onOff) {
         [ibTextFieldTime setTextColor:[NSColor blackColor]];
-        [ibTextFieldNotification setTextColor:[NSColor blackColor]];
     } else {
         [ibTextFieldTime setTextColor:[NSColor grayColor]];
-        [ibTextFieldNotification setTextColor:[NSColor grayColor]];
     }
 }
 
@@ -236,11 +229,11 @@ static NSString *keyiCal = @"iCal";
     }
     
     ibTextFieldTime.stringValue = string;
+    [self setNotification];
 }
 
 - (BOOL) startTask {
     if ([ibTextFieldTaskToDo.stringValue isEqualToString:@""]) {
-        ibTextFieldNotification.stringValue = [NSString stringWithFormat:@"Task is empty! DoubleClick a reminder"];
         return  NO;
     } else {
         mStartDate = [NSDate date];
@@ -271,7 +264,6 @@ static NSString *keyiCal = @"iCal";
         NSLog(@"hehe");
     }
     
-    ibTextFieldNotification.stringValue = notification;
 }
 
 - (void) writeEvent2iCal {
@@ -319,8 +311,6 @@ static NSString *keyiCal = @"iCal";
 - (IBAction)iReminders:(id)sender {
     
     [self showReminders:[self printIncompleteReminders:mReminderStore]];
-    
-    ibTextFieldNotification.stringValue = @"DoubleClick a reminder";
 }
 
 - (NSArray *)printIncompleteReminders : (EKEventStore *) store {
