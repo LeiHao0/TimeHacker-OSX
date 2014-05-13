@@ -25,6 +25,8 @@
 @property (weak) IBOutlet NSProgressIndicator *ibCircularProgressIndicator;
 @property (weak) IBOutlet NSSegmentedControl *ibSegmentedControl;
 @property (weak) IBOutlet NSStepper *ibStepper;
+@property (weak) IBOutlet NSDatePicker *ibStartDate;
+@property (weak) IBOutlet NSDatePicker *ibEndDate;
 
 @property EKEventStore* mEventStore;
 @property EKEventStore* mReminderStore;

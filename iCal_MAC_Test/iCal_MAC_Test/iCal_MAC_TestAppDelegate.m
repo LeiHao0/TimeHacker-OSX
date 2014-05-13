@@ -13,7 +13,7 @@
 
 @synthesize ibArrayController, ibButtonStartStop,ibTableView,ibTextFieldTaskToDo,ibTextFieldTime;
 
-@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator, ibSegmentedControl, ibStepper;
+@synthesize ibTableColumn,ibTextFieldCell,ibiCalAnalytics,ibiReminders, ibCircularProgressIndicator, ibSegmentedControl, ibStepper, ibStartDate, ibEndDate;
 
 @synthesize isStart, mCountingTimer, mEndDate, mStartDate, mTitle, mEventStore, mReminderStore, mPromoToDoInterval;
 
@@ -76,6 +76,9 @@ static NSString *keyiCal = @"iCal";
     mTitle = @"";
     [self setDefaultPromoToDo];
     [ibButtonStartStop setKeyEquivalent:@"\r"];
+    
+    ibEndDate.dateValue = [NSDate date];
+    ibStartDate.dateValue = [NSDate dateWithTimeIntervalSinceNow:-24*60*60*365];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -360,29 +363,39 @@ static NSString *keyiCal = @"iCal";
 
 - (NSArray *)printEvents : (EKEventStore *) store {
     // Get the appropriate calendar
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    // Create the start date components
-    NSDateComponents *yearsAgoComponents = [[NSDateComponents alloc] init];
-    yearsAgoComponents.year= -4;
-    NSDate *yearsAgo = [calendar dateByAddingComponents:yearsAgoComponents
-                                                 toDate:[NSDate date]
-                                                options:0];
+//    NSCalendar *calendar = [NSCalendar currentCalendar];
+//    // Create the start date components
+//    NSDateComponents *yearsAgoComponents = [[NSDateComponents alloc] init];
+//    yearsAgoComponents.year= -4;
+//    NSDate *yearsAgo = [calendar dateByAddingComponents:yearsAgoComponents
+//                                                 toDate:[NSDate date]
+//                                                options:0];
+//    
+//    // Create the end date components
+//    NSDateComponents *onedayFromNowComponents = [[NSDateComponents alloc] init];
+//    onedayFromNowComponents.day = 1;
+//    NSDate *oneDayFromNow = [calendar dateByAddingComponents:onedayFromNowComponents
+//                                                      toDate:[NSDate date]
+//                                                     options:0];
+    NSDate *startDate = ibStartDate.dateValue;
+    NSDate *endDate = ibEndDate.dateValue;
     
-    // Create the end date components
-    NSDateComponents *onedayFromNowComponents = [[NSDateComponents alloc] init];
-    onedayFromNowComponents.day = 1;
-    NSDate *oneDayFromNow = [calendar dateByAddingComponents:onedayFromNowComponents
-                                                      toDate:[NSDate date]
-                                                     options:0];
     // Create the predicate from the event store's instance method
-    NSPredicate *predicate = [store predicateForEventsWithStartDate:yearsAgo
-                                                            endDate:oneDayFromNow
+    NSPredicate *predicate = [store predicateForEventsWithStartDate:startDate
+                                                            endDate:endDate
                                                           calendars:nil];
     
     // Fetch all events that match the predicate
     NSArray *events = [store eventsMatchingPredicate:predicate];
     
     return [self analytics:events];
+}
+
+- (IBAction)setStartDate:(id)sender {
+    NSLog(@"%@", ibStartDate.dateValue);
+}
+- (IBAction)setEndDate:(id)sender {
+    NSLog(@"%@", ibEndDate.dateValue);
 }
 
 - (NSArray *)analytics : (NSArray *)events {

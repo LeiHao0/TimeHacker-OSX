@@ -16,7 +16,9 @@
                 <outlet property="ibArrayController" destination="OCo-kD-n0H" id="O1t-nL-vT2"/>
                 <outlet property="ibButtonStartStop" destination="sCL-hJ-7rZ" id="zTI-tO-KAK"/>
                 <outlet property="ibCircularProgressIndicator" destination="8Ds-ut-JEa" id="mnM-54-RyU"/>
+                <outlet property="ibEndDate" destination="It1-iA-8q5" id="GZS-3L-XCq"/>
                 <outlet property="ibSegmentedControl" destination="HBo-I7-mey" id="RfK-6j-95D"/>
+                <outlet property="ibStartDate" destination="g1u-2J-bjL" id="eE6-Z0-Oyr"/>
                 <outlet property="ibStepper" destination="ayU-kC-VG6" id="uC5-c4-ZP0"/>
                 <outlet property="ibTableColumn" destination="5dp-DZ-cnx" id="MDw-uM-5kE"/>
                 <outlet property="ibTableView" destination="r9o-wA-zDe" id="kXv-hc-Jb6"/>
@@ -92,14 +94,14 @@
         <window title="iCaleminder" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="354" height="273"/>
+            <rect key="contentRect" x="335" y="390" width="354" height="283"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="354" height="273"/>
+                <rect key="frame" x="0.0" y="0.0" width="354" height="283"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-2y-Um0">
-                        <rect key="frame" x="228" y="7" width="106" height="19"/>
+                        <rect key="frame" x="152" y="7" width="101" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="recessed" title="iCal Analytics" bezelStyle="recessed" alignment="left" imageScaling="proportionallyDown" sound="Submarine" inset="2" id="Yqf-QR-8qQ">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -110,7 +112,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0tV-Bp-w3J">
-                        <rect key="frame" x="20" y="7" width="94" height="19"/>
+                        <rect key="frame" x="172" y="217" width="81" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="recessed" title="iReminders" bezelStyle="recessed" imagePosition="left" alignment="left" imageScaling="proportionallyDown" sound="Ping" inset="2" id="2Aq-Qr-arD">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -121,7 +123,7 @@
                         </connections>
                     </button>
                     <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2c-N2-5Jv">
-                        <rect key="frame" x="20" y="33" width="314" height="159"/>
+                        <rect key="frame" x="20" y="43" width="314" height="159"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" ambiguous="YES" misplaced="YES" id="4Mf-vC-bLu">
                             <rect key="frame" x="0.0" y="17" width="314" height="142"/>
@@ -189,7 +191,7 @@
                         </tableHeaderView>
                     </scrollView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ztn-9i-DmP">
-                        <rect key="frame" x="20" y="236" width="314" height="22"/>
+                        <rect key="frame" x="20" y="246" width="314" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="TaskToDo -> Start" drawsBackground="YES" id="flT-vp-oiO">
                             <font key="font" metaFont="system"/>
@@ -198,7 +200,7 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCL-hJ-7rZ">
-                        <rect key="frame" x="164" y="210" width="26" height="19"/>
+                        <rect key="frame" x="107" y="217" width="26" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="recessed" title="▶︎" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="dZ9-iN-b2b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -209,20 +211,20 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UCR-jV-We5">
-                        <rect key="frame" x="18" y="207" width="76" height="21"/>
+                        <rect key="frame" x="18" y="216" width="83" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="00:00" id="mwu-gP-CXe">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="00:00" id="mwu-gP-CXe">
                             <font key="font" metaFont="system" size="17"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="8Ds-ut-JEa">
-                        <rect key="frame" x="204" y="7" width="16" height="16"/>
+                        <rect key="frame" x="128" y="8" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
                     <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-I7-mey">
-                        <rect key="frame" x="267" y="206" width="67" height="23"/>
+                        <rect key="frame" x="267" y="216" width="67" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <segmentedCell key="cell" alignment="left" style="smallSquare" trackingMode="selectOne" id="uU2-c3-Oiu">
                             <font key="font" metaFont="system"/>
@@ -240,13 +242,58 @@
                         </connections>
                     </segmentedControl>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-kC-VG6">
-                        <rect key="frame" x="76" y="204" width="19" height="27"/>
+                        <rect key="frame" x="17" y="213" width="19" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <stepperCell key="cell" continuous="YES" alignment="left" increment="5" minValue="15" maxValue="25" doubleValue="25" valueWraps="YES" id="5TU-0n-plS"/>
                         <connections>
                             <action selector="stepperValueChanged:" target="Voe-Tx-rLC" id="EL9-wz-dnv"/>
                         </connections>
                     </stepper>
+                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1u-2J-bjL">
+                        <rect key="frame" x="20" y="6" width="82" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <datePickerCell key="cell" alignment="left" drawsBackground="NO" datePickerMode="range" id="kA2-m7-RfP">
+                            <font key="font" metaFont="system"/>
+                            <date key="date" timeIntervalSinceReferenceDate="283996800">
+                                <!--2010-01-01 00:00:00 +0000-->
+                            </date>
+                            <date key="minDate" timeIntervalSinceReferenceDate="220838400">
+                                <!--2008-01-01 00:00:00 +0000-->
+                            </date>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <datePickerElements key="datePickerElements" year="YES" month="YES"/>
+                        </datePickerCell>
+                        <connections>
+                            <action selector="setStartDate:" target="Voe-Tx-rLC" id="sGs-6c-MFi"/>
+                        </connections>
+                    </datePicker>
+                    <datePicker verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="It1-iA-8q5">
+                        <rect key="frame" x="255" y="6" width="82" height="27"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <datePickerCell key="cell" alignment="left" drawsBackground="NO" datePickerMode="range" id="RZj-vE-Nu0">
+                            <font key="font" metaFont="system"/>
+                            <date key="date" timeIntervalSinceReferenceDate="283996800">
+                                <!--2010-01-01 00:00:00 +0000-->
+                            </date>
+                            <date key="minDate" timeIntervalSinceReferenceDate="220838400">
+                                <!--2008-01-01 00:00:00 +0000-->
+                            </date>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <datePickerElements key="datePickerElements" year="YES" month="YES"/>
+                        </datePickerCell>
+                        <connections>
+                            <action selector="setEndDate:" target="Voe-Tx-rLC" id="iEj-Yy-ZZZ"/>
+                        </connections>
+                    </datePicker>
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="J4e-mU-K5X">
+                        <rect key="frame" x="0.0" y="32" width="363" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
                 </subviews>
             </view>
         </window>
