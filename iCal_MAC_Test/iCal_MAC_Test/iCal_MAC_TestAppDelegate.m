@@ -185,10 +185,19 @@ static NSString *keyiCal = @"iCal";
     
     switch ([self getModel]) {
         case 0:
-             secondsInterval = --mPromoToDoInterval;
+             secondsInterval = mPromoToDoInterval -= 1;
+            
+            if (secondsInterval < 0) {
+                [self setNotification];
+                [self startStop:nil];
+#warning 25:00 should be remembered
+                textFieldTime = [NSString stringWithFormat:@"25:00"];
+                break;
+            }
+            
              iSeconds = secondsInterval  % 60;
              iMinutes = secondsInterval /60;
-            
+
              textFieldTime = [NSString stringWithFormat:@"%02d:%02d", iMinutes, iSeconds];
             break;
         case 1:
@@ -241,7 +250,6 @@ static NSString *keyiCal = @"iCal";
     }
     
     ibTextFieldTime.stringValue = string;
-    [self setNotification];
 }
 
 - (BOOL) startTask {
