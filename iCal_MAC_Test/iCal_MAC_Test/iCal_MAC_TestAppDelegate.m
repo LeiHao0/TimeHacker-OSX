@@ -160,10 +160,19 @@ static NSString *keyiCal = @"iCal";
     [ibTableView setEnabled:onOff];
     [ibSegmentedControl setEnabled:onOff];
     [ibStepper setEnabled:onOff];
+    [ibTextFieldTaskToDo setEnabled:onOff];
+    
+    [ibStartDate setEnabled:onOff];
+    [ibEndDate setEnabled:onOff];
+    
     if (onOff) {
         [ibTextFieldTime setTextColor:[NSColor blackColor]];
+        [ibStartDate setTextColor:[NSColor blackColor]];
+        [ibEndDate setTextColor:[NSColor blackColor]];
     } else {
         [ibTextFieldTime setTextColor:[NSColor grayColor]];
+        [ibStartDate setTextColor:[NSColor grayColor]];
+        [ibEndDate setTextColor:[NSColor grayColor]];
     }
 }
 
