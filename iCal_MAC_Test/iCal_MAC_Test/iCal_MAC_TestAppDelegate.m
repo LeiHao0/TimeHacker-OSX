@@ -185,7 +185,7 @@ static NSString *keyiCal = @"iCal";
     
     switch ([self getModel]) {
         case 0:
-             secondsInterval = mPromoToDoInterval -= 1;
+            secondsInterval = mPromoToDoInterval - [now timeIntervalSinceDate:mStartDate];
             
             if (secondsInterval < 0) {
                 [self setNotification];
@@ -201,9 +201,6 @@ static NSString *keyiCal = @"iCal";
              textFieldTime = [NSString stringWithFormat:@"%02d:%02d", iMinutes, iSeconds];
             break;
         case 1:
-            
-            now = [NSDate date];
-            
              secondsInterval = [now timeIntervalSinceDate:mStartDate];
             
              iSeconds = secondsInterval  % 60;
