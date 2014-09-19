@@ -1,4 +1,3 @@
-
 ##时间统计法
 最早记录 ，是从 [奇特的一生](http://book.douban.com/subject/1115353/) 开始的  
 大致是说，主角 柳比歇夫 一生完成了不可思议的工作量，对于时间，有近乎直觉的敏感  
@@ -86,7 +85,21 @@
 
 没有满意的就自己写一个，不然学编程是干嘛的
 
-##Usage
+##iOS Version On App Store
+[TimeHacker](https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=892273622&mt=8)
+
+##Mac OS X
+
+###Usage
+
+---
+2014-09-19 12:03:57
+
+Move (AnalyzeGoogleCalender By Python)[https://gist.github.com/Artwalk/7b0950dc8d64b92ecd59] to Gist
+
+Begin to rewrite `OS X` Version with `Swift`
+
+---
 
 2014-06-13 15:32:37  
 
