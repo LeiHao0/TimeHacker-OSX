@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E2499F11C1DCB2400387AC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2499F01C1DCB2400387AC2 /* AppDelegate.swift */; };
+		6E2499F31C1DCB2400387AC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2499F21C1DCB2400387AC2 /* ViewController.swift */; };
+		6E2499F51C1DCB2400387AC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2499F41C1DCB2400387AC2 /* Assets.xcassets */; };
+		6E2499F81C1DCB2400387AC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2499F61C1DCB2400387AC2 /* Main.storyboard */; };
+		6E249A031C1DCB2500387AC2 /* TimeHackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A021C1DCB2500387AC2 /* TimeHackerTests.swift */; };
+		6E249A0E1C1DCB2500387AC2 /* TimeHackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A0D1C1DCB2500387AC2 /* TimeHackerUITests.swift */; };
+		6E249A201C1DCED500387AC2 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A1F1C1DCED500387AC2 /* Counter.swift */; };
+		6E249A241C1DD75700387AC2 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A231C1DD75700387AC2 /* CounterTests.swift */; };
+		6E249A271C1DE17D00387AC2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A261C1DE17D00387AC2 /* Tools.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E2499FF1C1DCB2500387AC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2499E51C1DCB2400387AC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E2499EC1C1DCB2400387AC2;
+			remoteInfo = TimeHacker;
+		};
+		6E249A0A1C1DCB2500387AC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E2499E51C1DCB2400387AC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E2499EC1C1DCB2400387AC2;
+			remoteInfo = TimeHacker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E2499ED1C1DCB2400387AC2 /* TimeHacker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeHacker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2499F01C1DCB2400387AC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6E2499F21C1DCB2400387AC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6E2499F41C1DCB2400387AC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E2499F71C1DCB2400387AC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E2499F91C1DCB2400387AC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E2499FE1C1DCB2500387AC2 /* TimeHackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeHackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E249A021C1DCB2500387AC2 /* TimeHackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHackerTests.swift; sourceTree = "<group>"; };
+		6E249A041C1DCB2500387AC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E249A091C1DCB2500387AC2 /* TimeHackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeHackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E249A0D1C1DCB2500387AC2 /* TimeHackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHackerUITests.swift; sourceTree = "<group>"; };
+		6E249A0F1C1DCB2500387AC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E249A1F1C1DCED500387AC2 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		6E249A231C1DD75700387AC2 /* CounterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterTests.swift; sourceTree = "<group>"; };
+		6E249A261C1DE17D00387AC2 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E2499EA1C1DCB2400387AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E2499FB1C1DCB2500387AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E249A061C1DCB2500387AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E2499E41C1DCB2400387AC2 = {
+			isa = PBXGroup;
+			children = (
+				6E2499EF1C1DCB2400387AC2 /* TimeHacker */,
+				6E249A011C1DCB2500387AC2 /* TimeHackerTests */,
+				6E249A0C1C1DCB2500387AC2 /* TimeHackerUITests */,
+				6E2499EE1C1DCB2400387AC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E2499EE1C1DCB2400387AC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E2499ED1C1DCB2400387AC2 /* TimeHacker.app */,
+				6E2499FE1C1DCB2500387AC2 /* TimeHackerTests.xctest */,
+				6E249A091C1DCB2500387AC2 /* TimeHackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E2499EF1C1DCB2400387AC2 /* TimeHacker */ = {
+			isa = PBXGroup;
+			children = (
+				6E249A1C1C1DCEA900387AC2 /* Model */,
+				6E2499F01C1DCB2400387AC2 /* AppDelegate.swift */,
+				6E2499F21C1DCB2400387AC2 /* ViewController.swift */,
+				6E2499F41C1DCB2400387AC2 /* Assets.xcassets */,
+				6E2499F61C1DCB2400387AC2 /* Main.storyboard */,
+				6E2499F91C1DCB2400387AC2 /* Info.plist */,
+				6E249A261C1DE17D00387AC2 /* Tools.swift */,
+			);
+			path = TimeHacker;
+			sourceTree = "<group>";
+		};
+		6E249A011C1DCB2500387AC2 /* TimeHackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E249A231C1DD75700387AC2 /* CounterTests.swift */,
+				6E249A021C1DCB2500387AC2 /* TimeHackerTests.swift */,
+				6E249A041C1DCB2500387AC2 /* Info.plist */,
+			);
+			path = TimeHackerTests;
+			sourceTree = "<group>";
+		};
+		6E249A0C1C1DCB2500387AC2 /* TimeHackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E249A0D1C1DCB2500387AC2 /* TimeHackerUITests.swift */,
+				6E249A0F1C1DCB2500387AC2 /* Info.plist */,
+			);
+			path = TimeHackerUITests;
+			sourceTree = "<group>";
+		};
+		6E249A1B1C1DCE8000387AC2 /* iCail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iCail;
+			sourceTree = "<group>";
+		};
+		6E249A1C1C1DCEA900387AC2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E249A1E1C1DCEBB00387AC2 /* Counter */,
+				6E249A1D1C1DCEB200387AC2 /* TodoList */,
+				6E249A1B1C1DCE8000387AC2 /* iCail */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6E249A1D1C1DCEB200387AC2 /* TodoList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TodoList;
+			sourceTree = "<group>";
+		};
+		6E249A1E1C1DCEBB00387AC2 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				6E249A1F1C1DCED500387AC2 /* Counter.swift */,
+			);
+			name = Counter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E2499EC1C1DCB2400387AC2 /* TimeHacker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E249A121C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHacker" */;
+			buildPhases = (
+				6E2499E91C1DCB2400387AC2 /* Sources */,
+				6E2499EA1C1DCB2400387AC2 /* Frameworks */,
+				6E2499EB1C1DCB2400387AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimeHacker;
+			productName = TimeHacker;
+			productReference = 6E2499ED1C1DCB2400387AC2 /* TimeHacker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E2499FD1C1DCB2500387AC2 /* TimeHackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E249A151C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerTests" */;
+			buildPhases = (
+				6E2499FA1C1DCB2500387AC2 /* Sources */,
+				6E2499FB1C1DCB2500387AC2 /* Frameworks */,
+				6E2499FC1C1DCB2500387AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E249A001C1DCB2500387AC2 /* PBXTargetDependency */,
+			);
+			name = TimeHackerTests;
+			productName = TimeHackerTests;
+			productReference = 6E2499FE1C1DCB2500387AC2 /* TimeHackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E249A081C1DCB2500387AC2 /* TimeHackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E249A181C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerUITests" */;
+			buildPhases = (
+				6E249A051C1DCB2500387AC2 /* Sources */,
+				6E249A061C1DCB2500387AC2 /* Frameworks */,
+				6E249A071C1DCB2500387AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E249A0B1C1DCB2500387AC2 /* PBXTargetDependency */,
+			);
+			name = TimeHackerUITests;
+			productName = TimeHackerUITests;
+			productReference = 6E249A091C1DCB2500387AC2 /* TimeHackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E2499E51C1DCB2400387AC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Art;
+				TargetAttributes = {
+					6E2499EC1C1DCB2400387AC2 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6E2499FD1C1DCB2500387AC2 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6E2499EC1C1DCB2400387AC2;
+					};
+					6E249A081C1DCB2500387AC2 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6E2499EC1C1DCB2400387AC2;
+					};
+				};
+			};
+			buildConfigurationList = 6E2499E81C1DCB2400387AC2 /* Build configuration list for PBXProject "TimeHacker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E2499E41C1DCB2400387AC2;
+			productRefGroup = 6E2499EE1C1DCB2400387AC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E2499EC1C1DCB2400387AC2 /* TimeHacker */,
+				6E2499FD1C1DCB2500387AC2 /* TimeHackerTests */,
+				6E249A081C1DCB2500387AC2 /* TimeHackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E2499EB1C1DCB2400387AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E2499F51C1DCB2400387AC2 /* Assets.xcassets in Resources */,
+				6E2499F81C1DCB2400387AC2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E2499FC1C1DCB2500387AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E249A071C1DCB2500387AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E2499E91C1DCB2400387AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E2499F31C1DCB2400387AC2 /* ViewController.swift in Sources */,
+				6E2499F11C1DCB2400387AC2 /* AppDelegate.swift in Sources */,
+				6E249A201C1DCED500387AC2 /* Counter.swift in Sources */,
+				6E249A271C1DE17D00387AC2 /* Tools.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E2499FA1C1DCB2500387AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E249A241C1DD75700387AC2 /* CounterTests.swift in Sources */,
+				6E249A031C1DCB2500387AC2 /* TimeHackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E249A051C1DCB2500387AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E249A0E1C1DCB2500387AC2 /* TimeHackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E249A001C1DCB2500387AC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E2499EC1C1DCB2400387AC2 /* TimeHacker */;
+			targetProxy = 6E2499FF1C1DCB2500387AC2 /* PBXContainerItemProxy */;
+		};
+		6E249A0B1C1DCB2500387AC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E2499EC1C1DCB2400387AC2 /* TimeHacker */;
+			targetProxy = 6E249A0A1C1DCB2500387AC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E2499F61C1DCB2400387AC2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E2499F71C1DCB2400387AC2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E249A101C1DCB2500387AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E249A111C1DCB2500387AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6E249A131C1DCB2500387AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHacker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHacker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E249A141C1DCB2500387AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHacker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHacker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E249A161C1DCB2500387AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/Contents/MacOS/TimeHacker";
+			};
+			name = Debug;
+		};
+		6E249A171C1DCB2500387AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeHacker.app/Contents/MacOS/TimeHacker";
+			};
+			name = Release;
+		};
+		6E249A191C1DCB2500387AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TimeHacker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6E249A1A1C1DCB2500387AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimeHackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.artwalk.TimeHackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TimeHacker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E2499E81C1DCB2400387AC2 /* Build configuration list for PBXProject "TimeHacker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E249A101C1DCB2500387AC2 /* Debug */,
+				6E249A111C1DCB2500387AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E249A121C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHacker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E249A131C1DCB2500387AC2 /* Debug */,
+				6E249A141C1DCB2500387AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E249A151C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E249A161C1DCB2500387AC2 /* Debug */,
+				6E249A171C1DCB2500387AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E249A181C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E249A191C1DCB2500387AC2 /* Debug */,
+				6E249A1A1C1DCB2500387AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E2499E51C1DCB2400387AC2 /* Project object */;
+}

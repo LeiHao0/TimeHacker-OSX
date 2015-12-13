@@ -1,15 +1,15 @@
 //
-//  TimeHarker_OSXTests.swift
-//  TimeHarker-OSXTests
+//  TimeHackerTests.swift
+//  TimeHackerTests
 //
-//  Created by artwalk on 8/21/14.
-//  Copyright (c) 2014 artwalk. All rights reserved.
+//  Created by Art on 12/13/15.
+//  Copyright © 2015 Art. All rights reserved.
 //
 
-import Cocoa
 import XCTest
+@testable import TimeHacker
 
-class TimeHarker_OSXTests: XCTestCase {
+class TimeHackerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,14 +23,14 @@ class TimeHarker_OSXTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+//        self.measureBlock {
+//            // Put the code you want to measure the time of here.
+//        }
     }
-    
+
 }
