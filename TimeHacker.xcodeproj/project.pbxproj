@@ -16,6 +16,8 @@
 		6E249A201C1DCED500387AC2 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A1F1C1DCED500387AC2 /* Counter.swift */; };
 		6E249A241C1DD75700387AC2 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A231C1DD75700387AC2 /* CounterTests.swift */; };
 		6E249A271C1DE17D00387AC2 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E249A261C1DE17D00387AC2 /* Tools.swift */; };
+		6E9E816A1C1F333200AD7865 /* THCalender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E81691C1F333200AD7865 /* THCalender.swift */; };
+		6E9E816E1C1F394A00AD7865 /* THCalenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9E816D1C1F394A00AD7865 /* THCalenderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 		6E249A1F1C1DCED500387AC2 /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		6E249A231C1DD75700387AC2 /* CounterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterTests.swift; sourceTree = "<group>"; };
 		6E249A261C1DE17D00387AC2 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		6E9E81671C1F301900AD7865 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		6E9E81691C1F333200AD7865 /* THCalender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = THCalender.swift; path = iCal/THCalender.swift; sourceTree = "<group>"; };
+		6E9E816D1C1F394A00AD7865 /* THCalenderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCalenderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +106,7 @@
 		6E2499EF1C1DCB2400387AC2 /* TimeHacker */ = {
 			isa = PBXGroup;
 			children = (
+				6E9E81681C1F32B900AD7865 /* iCal */,
 				6E249A1C1C1DCEA900387AC2 /* Model */,
 				6E2499F01C1DCB2400387AC2 /* AppDelegate.swift */,
 				6E2499F21C1DCB2400387AC2 /* ViewController.swift */,
@@ -108,6 +114,7 @@
 				6E2499F61C1DCB2400387AC2 /* Main.storyboard */,
 				6E2499F91C1DCB2400387AC2 /* Info.plist */,
 				6E249A261C1DE17D00387AC2 /* Tools.swift */,
+				6E9E81671C1F301900AD7865 /* MyPlayground.playground */,
 			);
 			path = TimeHacker;
 			sourceTree = "<group>";
@@ -115,8 +122,9 @@
 		6E249A011C1DCB2500387AC2 /* TimeHackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E249A231C1DD75700387AC2 /* CounterTests.swift */,
 				6E249A021C1DCB2500387AC2 /* TimeHackerTests.swift */,
+				6E249A231C1DD75700387AC2 /* CounterTests.swift */,
+				6E9E816D1C1F394A00AD7865 /* THCalenderTests.swift */,
 				6E249A041C1DCB2500387AC2 /* Info.plist */,
 			);
 			path = TimeHackerTests;
@@ -161,6 +169,14 @@
 				6E249A1F1C1DCED500387AC2 /* Counter.swift */,
 			);
 			name = Counter;
+			sourceTree = "<group>";
+		};
+		6E9E81681C1F32B900AD7865 /* iCal */ = {
+			isa = PBXGroup;
+			children = (
+				6E9E81691C1F333200AD7865 /* THCalender.swift */,
+			);
+			name = iCal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9E816A1C1F333200AD7865 /* THCalender.swift in Sources */,
 				6E2499F31C1DCB2400387AC2 /* ViewController.swift in Sources */,
 				6E2499F11C1DCB2400387AC2 /* AppDelegate.swift in Sources */,
 				6E249A201C1DCED500387AC2 /* Counter.swift in Sources */,
@@ -306,6 +323,7 @@
 			files = (
 				6E249A241C1DD75700387AC2 /* CounterTests.swift in Sources */,
 				6E249A031C1DCB2500387AC2 /* TimeHackerTests.swift in Sources */,
+				6E9E816E1C1F394A00AD7865 /* THCalenderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +538,7 @@
 				6E249A141C1DCB2500387AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E249A151C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +547,7 @@
 				6E249A171C1DCB2500387AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E249A181C1DCB2500387AC2 /* Build configuration list for PBXNativeTarget "TimeHackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +556,7 @@
 				6E249A1A1C1DCB2500387AC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
